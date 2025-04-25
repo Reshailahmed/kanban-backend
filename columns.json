@@ -1,0 +1,37 @@
+[
+  {
+    "id": "backlog",
+    "title": "Backlog",
+    "isDefault": true
+  },
+  {
+    "id": "todo",
+    "title": "To Do",
+    "isDefault": true
+  },
+  {
+    "id": "inprogress",
+    "title": "In Progress",
+    "isDefault": true
+  },
+  {
+    "id": "inreview",
+    "title": "In Review",
+    "isDefault": true
+  },
+  {
+    "id": "done",
+    "title": "Done",
+    "isDefault": true
+  },
+  {
+    "id": "57f2a676-7bba-4d91-b75d-ab13b273f9c6",
+    "title": "Reshail",
+    "isDefault": false
+  },
+  {
+    "id": "4fa08aa7-7087-4bef-b7c2-072e0456715e",
+    "title": "hhh",
+    "isDefault": false
+  }
+]

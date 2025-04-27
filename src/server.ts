@@ -10,7 +10,7 @@ import path from "path";
 
 // === Initialize Express App ===
 const app = express();
-const PORT = 3001; // Define the port your server will run on
+const PORT = process.env.PORT || 3001; // Define the port your server will run on
 
 // === Define File Paths for Storing Data ===
 // These will store the task and column data in JSON format

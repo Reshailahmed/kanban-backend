@@ -10,7 +10,12 @@ const PORT = process.env.PORT || 3001;
 const MONGO_URI = "mongodb+srv://reshailahmed758pro:Reshail751998@reshailkanbanboard.6cns8jz.mongodb.net/?retryWrites=true&w=majority&appName=ReshailKanbanBoard";
 
 // === Middleware ===
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5174", "https://your-production-frontend-domain.com"], // allow local frontend + deployed frontend
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // === Routes ===

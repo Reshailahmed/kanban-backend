@@ -12,7 +12,7 @@ const MONGO_URI = "mongodb+srv://reshailahmed758pro:Reshail751998@reshailkanbanb
 
 // === Middleware ===
 app.use(cors({
-  origin: ["http://localhost:5174", "https://your-production-frontend-domain.com"], // allow local frontend + deployed frontend
+  origin: "*", // allow local frontend + deployed frontend
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));

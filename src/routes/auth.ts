@@ -1,10 +1,13 @@
-import express from "express";
+import express, {RequestHandler} from "express";
 import bcrypt from "bcryptjs";
 import { User } from "../models/User";
 
 const router = express.Router();
 
-router.post("/signup", async (req, res) => {
+const loginController = async (
+  req: express.Request,
+  res: express.Response
+): Promise<void> => {
   const { email, password } = req.body;
 
   try {
@@ -12,7 +15,8 @@ router.post("/signup", async (req, res) => {
 
     if (existingUser) {
       console.log("User already exists:", email);
-      return res.status(409).json({ message: "User already exists" });
+      res.status(409).json({ message: "User already exists" });
+      return;
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -26,6 +30,9 @@ router.post("/signup", async (req, res) => {
     console.error("❌ Signup error:", err);
     res.status(500).json({ message: "Internal server error" });
   }
-});
+};
+
+
+router.post("/signup", loginController);
 
 export default router;

@@ -4,6 +4,7 @@ import cors from "cors";
 import tasksRouter from "./routes/tasks";
 import columnsRouter from "./routes/columns";
 import { seedDefaultColumns } from "./db/seedDefaultColumns";
+import authRouter from "./routes/auth"; // <-- add this
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,6 +22,7 @@ app.use(express.json());
 // === Routes ===
 app.use("/tasks", tasksRouter);
 app.use("/columns", columnsRouter);
+app.use("/auth", authRouter); // <-- add this after tasks/columns routes
 
 // === MongoDB Connection ===
 mongoose.connect(MONGO_URI)
